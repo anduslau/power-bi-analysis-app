@@ -1,0 +1,74 @@
+{
+  "file_type": "rdl",
+  "file_path": "C:\\Users\\Andus\\obsidian\\power-bi-analysis-app\\power-bi-analysis-app\\test_files\\sample.rdl",
+  "file_size": 4196,
+  "data_sources": [
+    {
+      "name": "AdventureWorks",
+      "connection_string": "Data Source=localhost;Initial Catalog=AdventureWorks;Integrated Security=True",
+      "data_provider": "SQL"
+    }
+  ],
+  "tables": [
+    {
+      "name": "DataSet1",
+      "description": "Dataset query: SELECT * FROM Sales.SalesOrderHeader...",
+      "source": "SELECT * FROM Sales.SalesOrderHeader",
+      "row_count": null,
+      "columns": [
+        {
+          "name": "SalesOrderID",
+          "data_type": "SalesOrderID",
+          "description": "From query: SELECT * FROM Sales.SalesOrderHeader...",
+          "is_measure": false,
+          "is_calculated": false,
+          "expression": null
+        },
+        {
+          "name": "OrderDate",
+          "data_type": "OrderDate",
+          "description": "From query: SELECT * FROM Sales.SalesOrderHeader...",
+          "is_measure": false,
+          "is_calculated": false,
+          "expression": null
+        },
+        {
+          "name": "TotalDue",
+          "data_type": "TotalDue",
+          "description": "From query: SELECT * FROM Sales.SalesOrderHeader...",
+          "is_measure": false,
+          "is_calculated": false,
+          "expression": null
+        }
+      ]
+    }
+  ],
+  "relationships": [],
+  "measures": [],
+  "parameters": [
+    {
+      "name": "StartDate",
+      "data_type": "DateTime",
+      "default_value": "2023-01-01",
+      "prompt": "Start Date",
+      "values": []
+    },
+    {
+      "name": "EndDate",
+      "data_type": "DateTime",
+      "default_value": "2023-12-31",
+      "prompt": "End Date",
+      "values": []
+    }
+  ],
+  "visuals": [
+    {
+      "name": "Tablix1",
+      "visual_type": "Tablix",
+      "data_fields": {},
+      "filters": []
+    }
+  ],
+  "extraction_errors": [],
+  "extracted_at": "2026-04-03T15:20:21.570134"
+}

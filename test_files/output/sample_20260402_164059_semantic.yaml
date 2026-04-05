@@ -1,0 +1,44 @@
+version: 2
+
+semantic_models:
+  - name: sales_order_header
+    description: Sales order header data from AdventureWorks.
+    model: ref('sales_order_header') # Assuming a dbt model reference; adjust as needed.
+    defaults:
+      agg_time_dimension: order_date
+    entities:
+      - name: sales_order_id
+        type: primary
+        expr: sales_order_id
+    dimensions:
+      - name: sales_order_id
+        type: varchar
+        expr: sales_order_id
+      - name: order_date
+        type: date
+        expr: order_date
+    measures:
+      - name: total_due
+        description: Total amount due for the sales order.
+        expr: total_due
+        agg: sum
+    label: Sales Order Header
+
+semantic_models:
+  - name: report_parameters
+    description: Report parameters for date filtering.
+    model: ref('report_parameters') # Assuming a dbt model for parameters; adjust as needed.
+    defaults:
+      agg_time_dimension: start_date
+    entities:
+      - name: parameter_set
+        type: primary
+        expr: 1 # Placeholder for a unique identifier if needed.
+    dimensions:
+      - name: start_date
+        type: date
+        expr: start_date
+      - name: end_date
+        type: date
+        expr: end_date
+    label: Report Parameters

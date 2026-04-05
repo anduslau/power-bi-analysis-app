@@ -1,0 +1,41 @@
+version: 2
+
+semantic_models:
+  - name: sample_data
+    description: Data extracted from sample.xlsx
+    model: ref('stg_sample')
+    defaults:
+      agg_time_dimension: date_column
+
+    entities:
+      - name: sample_id
+        type: primary
+        expr: sample_id
+
+    dimensions:
+      - name: sample_id
+        type: varchar
+        description: Unique identifier for the sample record
+      - name: date_column
+        type: date
+        description: Date associated with the record
+      - name: category
+        type: varchar
+        description: Categorical classification
+      - name: status
+        type: varchar
+        description: Current status of the record
+
+    measures:
+      - name: record_count
+        description: Total number of records
+        agg: count
+        expr: sample_id
+      - name: total_value
+        description: Sum of the numeric value column
+        agg: sum
+        expr: value_column
+      - name: average_value
+        description: Average of the numeric value column
+        agg: average
+        expr: value_column

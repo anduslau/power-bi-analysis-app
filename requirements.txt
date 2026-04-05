@@ -1,0 +1,30 @@
+# Core dependencies for Power BI File Analysis App
+# Python 3.11+
+
+# Extraction libraries
+pbixray>=0.5.0  # Power BI file analysis
+openpyxl>=3.1.0  # Excel file handling
+pandas>=2.0.0      # Data file analysis (CSV, JSON, Parquet)
+pyarrow>=14.0.0    # Parquet file reading
+# pbi-tools optional for fallback
+
+# GUI
+PyQt6>=6.6.0
+
+# LLM APIs
+anthropic>=0.25.0
+openai>=1.12.0
+google-genai>=0.3.0  # Optional for Gemini
+
+# Output generation
+pyyaml>=6.0
+python-docx>=1.1.0  # For Word export
+markdown>=3.5
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+tqdm>=4.66.0  # Progress bars
+
+# Testing
+pytest>=7.4.0

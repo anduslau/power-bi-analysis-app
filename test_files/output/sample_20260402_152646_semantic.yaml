@@ -1,0 +1,31 @@
+version: 2
+
+semantic_models:
+  - name: sales_order_header
+    description: Sales order header data from AdventureWorks
+    model: ref('sales_order_header')
+    defaults:
+      agg_time_dimension: order_date
+    entities:
+      - name: sales_order_id
+        type: primary
+        expr: sales_order_id
+    dimensions:
+      - name: sales_order_id
+        type: numeric
+        description: Unique identifier for the sales order
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+        description: Date the order was placed
+    measures:
+      - name: total_due
+        description: Total amount due for the order
+        agg: sum
+        expr: total_due
+      - name: order_count
+        description: Count of sales orders
+        agg: count
+        expr: sales_order_id
+    label: Sales Order Header

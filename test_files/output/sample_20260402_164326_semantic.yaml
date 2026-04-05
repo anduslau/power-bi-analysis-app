@@ -1,0 +1,47 @@
+version: 2
+
+semantic_models:
+  - name: sample_data
+    description: Data extracted from sample.xlsx
+    model: ref('stg_sample')
+    defaults:
+      agg_time_dimension: date_column
+
+    entities:
+      - name: sample_id
+        type: primary
+        expr: id
+
+    dimensions:
+      - name: id
+        type: numeric
+        description: Unique identifier
+      - name: date_column
+        type: time
+        type_params:
+          time_granularity: day
+        description: Date column for time-based analysis
+      - name: category
+        type: categorical
+        description: Categorical grouping column
+      - name: region
+        type: categorical
+        description: Geographic region
+
+    measures:
+      - name: total_amount
+        description: Sum of amount values
+        agg: sum
+        expr: amount
+      - name: average_quantity
+        description: Average of quantity values
+        agg: average
+        expr: quantity
+      - name: row_count
+        description: Count of rows
+        agg: count
+        expr: id
+      - name: distinct_categories
+        description: Count of distinct categories
+        agg: count_distinct
+        expr: category
