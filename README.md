@@ -145,7 +145,9 @@ Or run directly:
 ```bash
 python -m power_bi_analysis.gui.main_window
 ```
+
 <img width="799" height="745" alt="image" src="https://github.com/user-attachments/assets/1d3f4c17-2dd6-41b9-a0fe-b9689083a9ff" />
+
 
 **GUI Features:**
 - File browser with drag-and-drop support
