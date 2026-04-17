@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import sys; sys.path.insert\\(0, '../../src'\\); import power_bi_analysis; print\\('Import successful'\\)\")",
+      "Bash(venv/Scripts/python *)",
+      "Bash(cmd *)",
+      "Bash(C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe *)",
+      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe\" -m pip list)",
+      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe\" -m pip install -e \".[dev]\" --ignore-installed)"
+    ]
+  }
+}

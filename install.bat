@@ -72,7 +72,7 @@ echo.
 
 REM Install package in development mode
 echo Installing Report to Business Documents Application...
-pip install -e ".[dev]"
+pip install -e ".[dev]" --ignore-installed
 if errorlevel 1 (
     echo ERROR: Installation failed.
     echo.
