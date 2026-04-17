@@ -1,3 +1,4 @@
+<img width="1024" height="1024" alt="Create a diagram based on the following informatio (1)" src="https://github.com/user-attachments/assets/7eaa01c5-8e06-4738-b1c0-440a2d707689" />
 # Report to Business Documents Application
 
 An AI-powered tool that analyzes Power BI (.pbix), Excel (.xlsx), and RDL (.rdl) files to automatically generate Business Requirements Documents (BRDs), Semantic YAML definitions, SQL schemas, and data dictionaries using Large Language Models.
