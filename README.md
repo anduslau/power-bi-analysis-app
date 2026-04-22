@@ -1,4 +1,4 @@
-<img width="1024" height="1024" alt="Create a diagram based on the following informatio (1)" src="https://github.com/user-attachments/assets/7eaa01c5-8e06-4738-b1c0-440a2d707689" />
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/304b3230-c059-4d0a-a587-000c2394b210" />
 
 # Report to Business Documents Application
 
