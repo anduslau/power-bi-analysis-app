@@ -1,8 +1,8 @@
-# Report to Business Documents Application - User Guide
+# Insight Fabric - User Guide
 
 ## Introduction
 
-The Report to Business Documents Application automates the documentation process for business intelligence assets. It extracts metadata from Power BI, Excel, and RDL files, then uses AI to generate comprehensive documentation including Business Requirements Documents (BRDs), semantic data models, SQL schemas, and data dictionaries.
+Insight Fabric automates the documentation process for business intelligence assets. It extracts metadata from Power BI, Excel, and RDL files, then uses AI to generate comprehensive documentation including Business Requirements Documents (BRDs), semantic data models, SQL schemas, and data dictionaries.
 
 ## Quick Start
 
@@ -10,8 +10,8 @@ The Report to Business Documents Application automates the documentation process
 
 ```bash
 # Clone the repository
-git clone https://github.com/anduslau/power-bi-analysis-app.git
-cd power-bi-analysis-app
+git clone https://github.com/anduslau/insight-fabric-app.git
+cd insight-fabric-app
 
 # Install the tool
 pip install -e .
@@ -22,12 +22,12 @@ pip install -e .
 Run the interactive configuration wizard:
 
 ```bash
-power-bi-configure
+insight-fabric-configure
 ```
 
 Follow the prompts to:
 - Select your preferred LLM provider (OpenAI, Anthropic, Gemini, DeepSeek)
-- Enter your API key (stored locally in `~/.power-bi-analysis/config.json`)
+- Enter your API key (stored locally in `~/.insight-fabric/config.json`)
 - Set default output directory (recommended: `./analysis_output`)
 - Choose whether to generate YAML by default
 
@@ -35,16 +35,16 @@ Follow the prompts to:
 
 ```bash
 # Analyze a Power BI file
-power-bi-analyze path/to/your_report.pbix
+insight-fabric-analyze path/to/your_report.pbix
 
 # Analyze an Excel file with all outputs
-power-bi-analyze data/workbook.xlsx \
+insight-fabric-analyze data/workbook.xlsx \
   --generate-yaml \
   --generate-sql \
   --generate-dictionary
 
 # Extract RDL metadata (no LLM required)
-rdl-analyze reports/dashboard.rdl --format json --output-dir ./rdl_output
+insight-fabric-rdl-analyze reports/dashboard.rdl --format json --output-dir ./rdl_output
 ```
 
 ### Step 4: Review Results
@@ -61,7 +61,7 @@ Check the output directory (default: `./analysis_output`) for generated files:
 
 #### Basic Syntax
 ```bash
-power-bi-analyze [FILE] [OPTIONS]
+insight-fabric-analyze [FILE] [OPTIONS]
 ```
 
 #### Common Options
@@ -82,7 +82,7 @@ power-bi-analyze [FILE] [OPTIONS]
 
 **Analyze Power BI with custom settings:**
 ```bash
-power-bi-analyze sales.pbix \
+insight-fabric-analyze sales.pbix \
   --output-dir ./sales_docs \
   --llm-provider anthropic \
   --model claude-3-5-sonnet-20241022 \
@@ -92,19 +92,19 @@ power-bi-analyze sales.pbix \
 
 **Quick Excel analysis:**
 ```bash
-power-bi-analyze budget.xlsx --no-yaml
+insight-fabric-analyze budget.xlsx --no-yaml
 ```
 
 **Check supported formats:**
 ```bash
-power-bi-analyze --list-supported
+insight-fabric-analyze --list-supported
 ```
 
 ### Graphical User Interface
 
 Launch the GUI:
 ```bash
-power-bi-gui
+insight-fabric-gui
 ```
 
 #### GUI Workflow
@@ -129,7 +129,7 @@ power-bi-gui
 
 For SQL Server Reporting Services (RDL) files:
 ```bash
-rdl-analyze report.rdl [OPTIONS]
+insight-fabric-rdl-analyze report.rdl [OPTIONS]
 ```
 
 **RDL Options:**
@@ -139,10 +139,10 @@ rdl-analyze report.rdl [OPTIONS]
 **Example:**
 ```bash
 # Extract JSON metadata
-rdl-analyze report.rdl --format json --output-dir ./metadata
+insight-fabric-rdl-analyze report.rdl --format json --output-dir ./metadata
 
 # Generate compact text for LLM processing
-rdl-analyze report.rdl --format compact --output-dir ./llm_input
+insight-fabric-rdl-analyze report.rdl --format compact --output-dir ./llm_input
 ```
 
 ## Output Files Explained
@@ -205,7 +205,7 @@ Detailed column-level documentation:
 
 The tool stores configuration in:
 ```
-~/.power-bi-analysis/config.json
+~/.insight-fabric/config.json
 ```
 
 ### Manual Configuration Example
@@ -263,13 +263,13 @@ Supported variables:
 
 #### "API key not found"
 **Solution:**
-1. Run `power-bi-configure` to set API key
+1. Run `insight-fabric-configure` to set API key
 2. Or set environment variable: `export OPENAI_API_KEY="your-key"`
-3. Or edit `~/.power-bi-analysis/config.json` directly
+3. Or edit `~/.insight-fabric/config.json` directly
 
 #### "File type not supported"
 **Solution:**
-- Check file extension with `power-bi-analyze --list-supported`
+- Check file extension with `insight-fabric-analyze --list-supported`
 - Ensure file is not corrupted
 - Try opening file in native application first
 
@@ -312,7 +312,7 @@ Supported variables:
 1. **Validate data source connections** are documented
 2. **Use meaningful parameter names**
 3. **Organize datasets** with clear naming
-4. **Test extraction** with `rdl-analyze` first
+4. **Test extraction** with `insight-fabric-rdl-analyze` first
 
 ### Output Management
 1. **Version control** generated documentation
@@ -329,7 +329,7 @@ For OpenAI-compatible endpoints (LocalAI, Ollama, etc.):
 1. Select "openai" as provider
 2. Set base URL in configuration:
    ```bash
-   power-bi-configure
+   insight-fabric-configure
    # When prompted for base URL, enter: http://localhost:8080/v1
    ```
 3. Specify model name (as recognized by your endpoint)
@@ -361,7 +361,7 @@ Script for multiple files:
 #!/bin/bash
 for file in ./reports/*.pbix; do
     echo "Analyzing $file..."
-    power-bi-analyze "$file" --output-dir "./docs"
+    insight-fabric-analyze "$file" --output-dir "./docs"
 done
 ```
 

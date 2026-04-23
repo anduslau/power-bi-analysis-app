@@ -1,6 +1,6 @@
-# Report to Business Documents Application - Installation and Testing Guide
+# Insight Fabric - Installation and Testing Guide
 
-This guide covers installation, configuration, and testing of the Report to Business Documents Application.
+This guide covers installation, configuration, and testing of Insight Fabric.
 
 ## Prerequisites
 
@@ -28,8 +28,8 @@ This guide covers installation, configuration, and testing of the Report to Busi
 
 ### 1. Clone or Download
 ```bash
-git clone https://github.com/anduslau/power-bi-analysis-app.git
-cd power-bi-analysis-app
+git clone https://github.com/anduslau/insight-fabric-app.git
+cd insight-fabric-app
 ```
 
 ### 2. Create Virtual Environment
@@ -65,7 +65,7 @@ pip install -e .
 ### 5. Configure the Tool
 ```bash
 # Run interactive configuration wizard
-power-bi-configure
+insight-fabric-configure
 
 # Or set API key via environment variable
 # Windows
@@ -105,16 +105,16 @@ pytest tests/test_comparison.py -v  # If exists
 ### Quick Smoke Tests
 ```bash
 # Check command availability
-power-bi-analyze --help
-rdl-analyze --help
-power-bi-gui --help
-power-bi-compare --help
+insight-fabric-analyze --help
+insight-fabric-rdl-analyze --help
+insight-fabric-gui --help
+insight-fabric-compare --help
 
 # List supported file formats
-power-bi-analyze --list-supported
+insight-fabric-analyze --list-supported
 
 # Extract metadata from sample files (no LLM required)
-rdl-analyze test_files/sample.rdl --format json
+insight-fabric-rdl-analyze test_files/sample.rdl --format json
 ```
 
 ## Using the Tool
@@ -122,17 +122,17 @@ rdl-analyze test_files/sample.rdl --format json
 ### Command Line Interface
 ```bash
 # Analyze a Power BI file
-power-bi-analyze test_files/sample.pbix --output-dir ./output
+insight-fabric-analyze test_files/sample.pbix --output-dir ./output
 
 # Analyze Excel file with all outputs
-power-bi-analyze test_files/sample.xlsx \
+insight-fabric-analyze test_files/sample.xlsx \
   --generate-yaml \
   --generate-sql \
   --generate-dictionary \
   --llm-provider openai
 
 # Compare two BI files
-power-bi-compare test_files/sample.pbix test_files/sample.xlsx \
+insight-fabric-compare test_files/sample.pbix test_files/sample.xlsx \
   --output-format markdown \
   --similarity-threshold 0.8
 ```
@@ -140,7 +140,7 @@ power-bi-compare test_files/sample.pbix test_files/sample.xlsx \
 ### Graphical User Interface
 ```bash
 # Launch the GUI
-power-bi-gui
+insight-fabric-gui
 ```
 
 **GUI Features:**
@@ -211,7 +211,7 @@ The `test_files/` directory contains sample files for testing:
 ### Getting Help
 
 - Check the [README.md](README.md) for detailed documentation
-- Run `power-bi-analyze --help` for CLI options
+- Run `insight-fabric-analyze --help` for CLI options
 - Examine generated metadata files for extraction issues
 - Enable verbose logging with `--verbose` flag (if implemented)
 
@@ -219,7 +219,7 @@ The `test_files/` directory contains sample files for testing:
 
 1. **Analyze your own files** - Try with actual Power BI, Excel, or RDL files
 2. **Explore outputs** - Check generated BRD, YAML, SQL, and dictionary files
-3. **Customize configuration** - Edit `~/.power-bi-analysis/config.json`
+3. **Customize configuration** - Edit `~/.insight-fabric/config.json`
 4. **Extend the tool** - Add new extractors or serializers
 5. **Contribute** - Submit issues or pull requests on GitHub
 
@@ -228,8 +228,8 @@ The `test_files/` directory contains sample files for testing:
 To remove the tool:
 
 1. Delete the virtual environment: `rm -rf venv` (Linux/Mac) or `rmdir /s venv` (Windows)
-2. Remove configuration: `rm -rf ~/.power-bi-analysis` (Linux/Mac) or `rmdir /s %USERPROFILE%\.power-bi-analysis` (Windows)
-3. Uninstall package: `pip uninstall power-bi-analysis`
+2. Remove configuration: `rm -rf ~/.insight-fabric` (Linux/Mac) or `rmdir /s %USERPROFILE%\.insight-fabric` (Windows)
+3. Uninstall package: `pip uninstall insight-fabric`
 
 ---
 

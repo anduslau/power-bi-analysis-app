@@ -1,5 +1,5 @@
 """
-Configuration management for Report to Business Documents Application.
+Configuration management for Insight Fabric.
 """
 
 import json
@@ -7,19 +7,19 @@ import os
 from pathlib import Path
 from typing import Dict, Any, Optional
 
-DEFAULT_CONFIG_DIR = Path.home() / ".power-bi-analysis"
+DEFAULT_CONFIG_DIR = Path.home() / ".insight-fabric"
 DEFAULT_CONFIG_FILE = DEFAULT_CONFIG_DIR / "config.json"
 
 
 class Config:
-    """Configuration manager for Report to Business Documents Application."""
+    """Configuration manager for Insight Fabric."""
 
     def __init__(self, config_file: Optional[Path] = None):
         """
         Initialize configuration.
 
         Args:
-            config_file: Path to config file (default: ~/.power-bi-analysis/config.json)
+            config_file: Path to config file (default: ~/.insight-fabric/config.json)
         """
         self.config_file = config_file or DEFAULT_CONFIG_FILE
         self.data: Dict[str, Any] = self._load_defaults()
@@ -178,7 +178,7 @@ def configure_interactive():
     """Interactive configuration wizard."""
     config = Config()
 
-    print("=== Report to Business Documents Application Configuration ===\n")
+    print("=== Insight Fabric Configuration ===\n")
 
     # LLM Provider
     providers = ["openai", "anthropic", "gemini", "deepseek"]

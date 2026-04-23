@@ -1,5 +1,5 @@
 """
-Main GUI window for Report to Business Documents Application.
+Main GUI window for Insight Fabric.
 """
 
 import sys
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
 
     def init_ui(self):
         """Initialize the user interface."""
-        self.setWindowTitle("Report to Business Documents Application")
+        self.setWindowTitle("Insight Fabric")
         self.setMinimumSize(800, 600)
 
         # Central widget
@@ -628,8 +628,8 @@ def main():
     from PyQt6.QtWidgets import QApplication
 
     app = QApplication(sys.argv)
-    app.setApplicationName("Report to Business Documents Application")
-    app.setOrganizationName("PowerBIAnalysis")
+    app.setApplicationName("Insight Fabric")
+    app.setOrganizationName("InsightFabric")
 
     window = MainWindow()
     window.show()

@@ -1,12 +1,12 @@
 """
-Report to Business Documents Application
+Insight Fabric
 
 A desktop application that analyzes Power BI, Excel, and RDL files
 to generate Business Requirements Documents and Semantic YAML files.
 """
 
 __version__ = "0.1.0"
-__author__ = "Report to Business Documents Application Team"
+__author__ = "Insight Fabric Team"
 
 from .cli import main
 from .extractors import (

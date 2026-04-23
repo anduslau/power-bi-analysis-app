@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CLI entry point for Report to Business Documents Application.
+CLI entry point for Insight Fabric.
 """
 
 import argparse
@@ -101,7 +101,7 @@ def main():
         print(f"Error: File '{args.file}' not found.")
         sys.exit(1)
 
-    print(f"Report to Business Documents Application")
+    print(f"Insight Fabric")
     print(f"=============================")
     print(f"File: {args.file}")
     print(f"Output directory: {args.output_dir}")

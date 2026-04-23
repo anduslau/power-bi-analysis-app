@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="power-bi-analysis",
+    name="insight-fabric",
     version="0.1.0",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
@@ -27,11 +27,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "power-bi-analyze=power_bi_analysis.cli:main",
-            "rdl-analyze=power_bi_analysis.rdl_cli:main",
-            "power-bi-configure=power_bi_analysis.config:configure_interactive",
-            "power-bi-gui=power_bi_analysis.gui.main_window:main",
-            "power-bi-compare=power_bi_analysis.compare_cli:main",
+            "insight-fabric-analyze=power_bi_analysis.cli:main",
+            "insight-fabric-rdl-analyze=power_bi_analysis.rdl_cli:main",
+            "insight-fabric-configure=power_bi_analysis.config:configure_interactive",
+            "insight-fabric-gui=power_bi_analysis.gui.main_window:main",
+            "insight-fabric-compare=power_bi_analysis.compare_cli:main",
         ],
     },
 )

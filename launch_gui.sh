@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Launching Report to Business Documents Application GUI..."
+echo "Launching Insight Fabric GUI..."
 echo
 
 # Activate virtual environment if exists
@@ -12,4 +12,4 @@ else
 fi
 
 # Launch GUI
-power-bi-gui
+insight-fabric-gui

@@ -1,5 +1,5 @@
 @echo off
-echo Report to Business Documents Application - Test Runner
+echo Insight Fabric - Test Runner
 echo ====================================
 echo.
 

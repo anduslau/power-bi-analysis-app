@@ -1,6 +1,6 @@
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/304b3230-c059-4d0a-a587-000c2394b210" />
 
-# Report to Business Documents Application
+# Insight Fabric
 
 An AI-powered tool that analyzes Power BI (.pbix), Excel (.xlsx), and RDL (.rdl) files to automatically generate Business Requirements Documents (BRDs), Semantic YAML definitions, SQL schemas, and data dictionaries using Large Language Models.
 
@@ -30,8 +30,8 @@ An AI-powered tool that analyzes Power BI (.pbix), Excel (.xlsx), and RDL (.rdl)
 
 1. Clone or download the repository:
    ```bash
-   git clone https://github.com/anduslau/power-bi-analysis-app.git
-   cd power-bi-analysis-app
+   git clone https://github.com/anduslau/insight-fabric-app.git
+   cd insight-fabric-app
    ```
 
 2. Install the package with pip:
@@ -62,19 +62,19 @@ Before using the tool, configure your LLM provider and API keys:
 
 Run the configuration wizard:
 ```bash
-power-bi-configure
+insight-fabric-configure
 ```
 
 Follow the prompts to:
 1. Select LLM provider (OpenAI, Anthropic, Gemini, DeepSeek)
-2. Enter API key (stored securely in `~/.power-bi-analysis/config.json`)
+2. Enter API key (stored securely in `~/.insight-fabric/config.json`)
 3. Specify default model
 4. Set output directory (default: `./analysis_output`)
 5. Configure YAML generation preference
 
 ### Manual Configuration
 
-Edit the configuration file at `~/.power-bi-analysis/config.json`:
+Edit the configuration file at `~/.insight-fabric/config.json`:
 ```json
 {
   "llm": {
@@ -110,12 +110,12 @@ Alternatively, set API keys via environment variables:
 
 #### Analyze any supported file:
 ```bash
-power-bi-analyze path/to/your/file.pbix
+insight-fabric-analyze path/to/your/file.pbix
 ```
 
 #### Advanced options:
 ```bash
-power-bi-analyze path/to/report.pbix \
+insight-fabric-analyze path/to/report.pbix \
   --output-dir ./output \
   --generate-yaml \
   --generate-sql \
@@ -126,19 +126,19 @@ power-bi-analyze path/to/report.pbix \
 
 #### List supported file extensions:
 ```bash
-power-bi-analyze --list-supported
+insight-fabric-analyze --list-supported
 ```
 
 #### RDL-specific analysis (no LLM required):
 ```bash
-rdl-analyze path/to/report.rdl --format json --output-dir ./rdl_output
+insight-fabric-rdl-analyze path/to/report.rdl --format json --output-dir ./rdl_output
 ```
 
 ### Graphical User Interface (GUI)
 
 Launch the GUI application:
 ```bash
-power-bi-gui
+insight-fabric-gui
 ```
 
 Or run directly:
@@ -258,12 +258,12 @@ For OpenAI-compatible providers (like DeepSeek, LocalAI, Ollama):
 
 ### Example 1: Quick Power BI Analysis
 ```bash
-power-bi-analyze sales_dashboard.pbix --output-dir ./sales_analysis
+insight-fabric-analyze sales_dashboard.pbix --output-dir ./sales_analysis
 ```
 
 ### Example 2: Excel File with All Outputs
 ```bash
-power-bi-analyze financial_data.xlsx \
+insight-fabric-analyze financial_data.xlsx \
   --generate-yaml \
   --generate-sql \
   --generate-dictionary \
@@ -272,7 +272,7 @@ power-bi-analyze financial_data.xlsx \
 
 ### Example 3: RDL Metadata Extraction
 ```bash
-rdl-analyze report.rdl --format compact --output-dir ./rdl_metadata
+insight-fabric-rdl-analyze report.rdl --format compact --output-dir ./rdl_metadata
 ```
 
 ## Troubleshooting
@@ -280,7 +280,7 @@ rdl-analyze report.rdl --format compact --output-dir ./rdl_metadata
 ### Common Issues
 
 **"API key not found" error**
-- Run `power-bi-configure` to set API key
+- Run `insight-fabric-configure` to set API key
 - Set environment variable: `export OPENAI_API_KEY="your-key"`
 - Check config file permissions
 
@@ -303,7 +303,7 @@ rdl-analyze report.rdl --format compact --output-dir ./rdl_metadata
 
 Enable verbose output:
 ```bash
-power-bi-analyze file.pbix --verbose  # If implemented
+insight-fabric-analyze file.pbix --verbose  # If implemented
 ```
 
 Check generated metadata files for extraction issues:
@@ -315,7 +315,7 @@ cat output/filename_metadata.json | jq .  # Use jq for pretty printing
 
 ### Project Structure
 ```
-power-bi-analysis-app/
+insight-fabric-app/
 ├── src/power_bi_analysis/
 │   ├── extractors/          # File format extractors
 │   ├── llm/                # LLM provider implementations

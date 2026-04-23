@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Report to Business Documents Application - Installation Script"
+echo "Insight Fabric - Installation Script"
 echo "==========================================="
 echo
 
@@ -60,7 +60,7 @@ fi
 echo
 
 # Install package in development mode
-echo "Installing Report to Business Documents Application..."
+echo "Installing Insight Fabric..."
 pip install -e ".[dev]"
 if [ $? -ne 0 ]; then
     echo "ERROR: Installation failed."
@@ -75,7 +75,7 @@ echo "Installation completed ✓"
 echo
 
 # Check if configuration already exists
-CONFIG_FILE="$HOME/.power-bi-analysis/config.json"
+CONFIG_FILE="$HOME/.insight-fabric/config.json"
 if [ -f "$CONFIG_FILE" ]; then
     echo "Configuration file already exists at:"
     echo "  $CONFIG_FILE"
@@ -100,12 +100,12 @@ if [ $RUN_CONFIG_WIZARD -eq 1 ]; then
     echo "  2. Anthropic Claude (requires ANTHROPIC_API_KEY)"
     echo "  3. Google Gemini (requires GEMINI_API_KEY)"
     echo
-    echo "Press Ctrl+C to skip configuration (you can run 'power-bi-configure' later)"
+    echo "Press Ctrl+C to skip configuration (you can run 'insight-fabric-configure' later)"
     echo
-    power-bi-configure
+    insight-fabric-configure
     if [ $? -ne 0 ]; then
         echo "WARNING: Configuration wizard failed or was cancelled."
-        echo "You can run 'power-bi-configure' manually later."
+        echo "You can run 'insight-fabric-configure' manually later."
     fi
 else
     echo "Skipping configuration wizard."
@@ -118,16 +118,16 @@ echo "Installation Complete!"
 echo
 echo "Next steps:"
 echo "1. Test the installation: ./run_test.sh"
-echo "2. Launch GUI: power-bi-gui"
-echo "3. Analyze a file: power-bi-analyze test_files/sample.pbix"
+echo "2. Launch GUI: insight-fabric-gui"
+echo "3. Analyze a file: insight-fabric-analyze test_files/sample.pbix"
 echo "4. Run all tests: pytest"
 echo
 echo "Commands available:"
-echo "  power-bi-analyze    - Analyze BI files with LLM"
-echo "  power-bi-gui        - Launch graphical interface"
-echo "  rdl-analyze         - Extract RDL metadata"
-echo "  power-bi-configure  - Configure API keys and settings"
-echo "  power-bi-compare    - Compare two BI files"
+echo "  insight-fabric-analyze    - Analyze BI files with LLM"
+echo "  insight-fabric-gui        - Launch graphical interface"
+echo "  insight-fabric-rdl-analyze         - Extract RDL metadata"
+echo "  insight-fabric-configure  - Configure API keys and settings"
+echo "  insight-fabric-compare    - Compare two BI files"
 echo
 echo "To activate the virtual environment in future sessions:"
 echo "  source venv/bin/activate"

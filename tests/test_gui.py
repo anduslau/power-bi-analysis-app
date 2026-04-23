@@ -1,5 +1,5 @@
 """
-GUI integration tests for Report to Business Documents Application.
+GUI integration tests for Insight Fabric.
 """
 
 import sys
@@ -37,7 +37,7 @@ class TestMainWindow:
 
     def test_window_creation(self, window):
         """Test that window is created with correct title."""
-        assert window.windowTitle() == "Report to Business Documents Application"
+        assert window.windowTitle() == "Insight Fabric"
         assert window.file_path_edit is not None
         assert window.llm_provider_combo is not None
         assert window.run_btn is not None

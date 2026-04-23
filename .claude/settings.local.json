@@ -4,9 +4,20 @@
       "Bash(python -c \"import sys; sys.path.insert\\(0, '../../src'\\); import power_bi_analysis; print\\('Import successful'\\)\")",
       "Bash(venv/Scripts/python *)",
       "Bash(cmd *)",
-      "Bash(C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe *)",
-      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe\" -m pip list)",
-      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/power-bi-analysis-app/venv/Scripts/python.exe\" -m pip install -e \".[dev]\" --ignore-installed)"
+      "Bash(C:/Users/Andus/Desktop/Claude Code Projects/insight-fabric-app/venv/Scripts/python.exe *)",
+      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/insight-fabric-app/venv/Scripts/python.exe\" -m pip list)",
+      "Bash(\"C:/Users/Andus/Desktop/Claude Code Projects/insight-fabric-app/venv/Scripts/python.exe\" -m pip install -e \".[dev]\" --ignore-installed)",
+      "Bash(python setup.py --name)",
+      "Bash(dir venv\\\\Scripts\\\\*.exe)",
+      "Bash(findstr /i \"power-bi insight-fabric\")",
+      "Bash(dir *)",
+      "Bash(venv/Scripts/insight-fabric-gui.exe --help)",
+      "Bash(venv/Scripts/pip.exe install *)",
+      "Bash(venv/Scripts/insight-fabric-gui.exe)",
+      "Bash(venv/Scripts/python.exe setup.py egg_info)",
+      "Bash(venv/Scripts/pip.exe --version)",
+      "Bash(venv/Scripts/python.exe -m pip --version)",
+      "Bash(venv/Scripts/python.exe -m pip install -e . --ignore-installed)"
     ]
   }
 }

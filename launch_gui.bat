@@ -1,11 +1,11 @@
 @echo off
-echo Launching Report to Business Documents Application GUI...
+echo Launching Insight Fabric GUI...
 echo.
 
 REM Check if GUI executable exists
-if exist venv\Scripts\power-bi-gui.exe (
+if exist venv\Scripts\insight-fabric-gui.exe (
     echo Starting GUI...
-    venv\Scripts\power-bi-gui.exe
+    venv\Scripts\insight-fabric-gui.exe
     if %ERRORLEVEL% neq 0 (
         echo.
         echo GUI exited with error code %ERRORLEVEL%.
